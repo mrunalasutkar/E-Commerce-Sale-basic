@@ -7,7 +7,7 @@ from datetime import datetime
 
 # ------------------- Page Configuration -------------------
 st.set_page_config(
-    page_title="Ultimate E-Commerce Sales Dashboard",
+    page_title="E-Commerce Sales Dashboard",
     layout="wide",
     initial_sidebar_state="expanded",
     page_icon="📊"
@@ -44,7 +44,7 @@ total_orders = filtered_df['Order ID'].nunique()
 total_customers = filtered_df['Customer ID'].nunique()
 aov = total_sales / total_orders if total_orders else 0
 
-st.markdown("## 📊 Ultimate E-Commerce Dashboard")
+st.markdown("<h2 style='text-align: center;'>📊 E-Commerce Dashboard</h2>", unsafe_allow_html=True)
 col1, col2, col3, col4 = st.columns(4)
 col1.metric("💰 Total Sales", f"${total_sales:,.2f}", delta=f"${total_sales/1000:,.2f}K")
 col2.metric("🛒 Total Orders", f"{total_orders:,}", delta=f"{total_orders//10:,}")
